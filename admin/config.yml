@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: 你的GitHub用户名/company-website  # 替换成你的GitHub用户名（比如 abc123/company-website）
+  branch: main
+
+media_folder: "images/uploads" # 上传图片的存储位置
+public_folder: "/images/uploads" # 网页里访问图片的路径
+
+collections:
+  - name: "pages" # 管理网页内容
+    label: "网页内容"
+    files:
+      - name: "home"
+        label: "首页"
+        file: "index.html"
+        fields:
+          - { label: "轮播图1链接", name: "carousel1_url", widget: "string" }
+          - { label: "轮播图1标题", name: "carousel1_title", widget: "string" }
+          - { label: "首页介绍文字", name: "home_intro", widget: "text" }
+          - { label: "主题色调", name: "theme_color", widget: "color", default: "#0d6efd" }
+      - name: "services"
+        label: "产品服务"
+        file: "services.html"
+        fields:
+          - { label: "产品1名称", name: "service1_name", widget: "string" }
+          - { label: "产品1介绍", name: "service1_desc", widget: "text" }
